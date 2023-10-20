@@ -29,7 +29,7 @@ public class ContactController {
 
     @PutMapping("/{id}")
     public ContactUpdatedJson updateContact(@PathVariable final Long id, @RequestBody @Valid final ContactUpdateJson contactUpdateJson) {
-        if (contactUpdateJson.getId().equals(id)) {
+        if (!contactUpdateJson.getId().equals(id)) {
             throw new IllegalArgumentException("Contact id in path and body must be the same");
         }
 

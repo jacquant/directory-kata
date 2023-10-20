@@ -30,7 +30,7 @@ public class CompanyController {
 
     @PutMapping("/{id}")
     public CompanyUpdatedJson updateCompany(@PathVariable final Long id, @Valid @RequestBody final CompanyUpdateJson companyUpdateJson) {
-        if (companyUpdateJson.getId().equals(id)) {
+        if (!companyUpdateJson.getId().equals(id)) {
             throw new IllegalArgumentException("Company id in path and body must be the same");
         }
 

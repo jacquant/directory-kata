@@ -10,6 +10,8 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class ContactGetJson extends ContactJson {
+
+    private Long id;
     @Valid
     List<CompanyGetJson> companies;
 }
